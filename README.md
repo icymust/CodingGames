@@ -1,2 +1,2 @@
 # GoLangGames
-##here is my game collection
+Here is my game collection
