@@ -1,13 +1,15 @@
 import pygame
+from pygame.sprite import Sprite
 
 #описание всего что связано с пушкой
-class Gun():
+class Gun(Sprite):
 
     def __init__ (self, screen):
         ### инициализация пушки ###
         
+        super(Gun, self).__init__()
         self.screen = screen # получаем экран 
-        self.image = pygame.image.load('SpaceGame/images/img_gun.png') # загружаем фотографию пушки
+        self.image = pygame.image.load('SpaceGame/images/gun.png') # загружаем фотографию пушки
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         self.rect.centerx = self.screen_rect.centerx
@@ -31,4 +33,8 @@ class Gun():
             self.center -= 1.5
             
         self.rect.centerx = self.center
+        
+    def create_gun(self):
+        #размещает пушку по центру внизу
+        self.center = self.screen_rect.centerx
             
